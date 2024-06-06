@@ -27,16 +27,14 @@ const TicTacToe = () => {
         if (lock) {
             return 0;
         }
-        if(count%2===0)
-            {
-                e.target.innerHTML = '<img src="${cross_icon}">'
-                data[num]="x";
-                setCount(++count);
-            }
-            else{
-                e.target.innerHTML = '<img src="${circle_icon}">'
-                data[num]="o";
-                setCount(++count);
+        if (count % 2 === 0) {
+            e.target.innerHTML = `<img src="${cross_icon}">`;
+            data[num] = "x";
+            setCount(count + 1);
+        } else {
+            e.target.innerHTML = `<img src="${circle_icon}">`;
+            data[num] = "o";
+            setCount(count + 1);
             }
             checkWin();
 
@@ -86,11 +84,11 @@ const TicTacToe = () => {
         setLock(true);
         if(winner==="x")
         {
-            titleRef.current.innerHTML = 'Congratulations: <img src=${cross_icon}>'
+            titleRef.current.innerHTML = 'Congratulations: <img src="${cross_icon}">';
         }
         else
         {
-            titleRef.current.innerHTML = 'Congratulations: <img src=${circle_icon}>'
+            titleRef.current.innerHTML = 'Congratulations: <img src="${circle_icon}">';
         }
     }
 
